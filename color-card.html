@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>カラーカード</title>
+    <style>
+      body {
+        touch-action: manipulation;
+      }
+
+      .input {
+        font-size: 24px;
+      }
+
+      .update-button {
+        width: 60px; /* ボタンの幅 */
+        height: 36px; /* ボタンの高さ */
+        font-size: 12px; /* フォントサイズ */
+        background-color: #000;
+        color: #fff; /* 文字色 */
+        border: none; /* 枠線なし */
+        border-radius: 4px; /* 丸み */
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24),
+          0px 0px 2px rgba(0, 0, 0, 0.12); /* 影 */
+        cursor: pointer; /* カーソル */
+      }
+
+      #inputContainer {
+        margin-bottom: 20px; /* 下の要素との隙間を作る */
+      }
+
+      .button-row {
+        margin-bottom: 10px;
+      }
+
+      .number-button {
+        width: 60px; /* ボタンの幅 */
+        height: 50px; /* ボタンの高さ */
+        margin-right: 5px;
+        margin-bottom: 5px; /* 下マージンを追加 */
+        font-size: 16px; /* フォントサイズ */
+        color: #fff; /* 文字色 */
+        border: none; /* 枠線なし */
+        border-radius: 4px; /* 丸み */
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24),
+          0px 0px 2px rgba(0, 0, 0, 0.12); /* 影 */
+        cursor: pointer; /* カーソル */
+      }
+
+      /* レスポンシブデザインのためのメディアクエリ */
+      @media (max-width: 800px) {
+        button {
+          width: 40px; /* 画面が狭い時はボタンの幅を小さく */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="inputContainer">
+      <input
+        type="number"
+        class="input"
+        id="buttonCount"
+        placeholder="カード枚数"
+      />
+      <button onclick="createButtons()" class="update-button">更新</button>
+    </div>
+    <div id="buttons">
+      <!-- JavaScriptでボタンが生成されます -->
+    </div>
+    <script>
+      function createButtons() {
+        const buttonsContainer = document.getElementById("buttons");
+        buttonsContainer.innerHTML = ""; // コンテナをクリア
+        const count = document.getElementById("buttonCount").value;
+
+        let buttonRow = document.createElement("div");
+        buttonRow.className = "button-row";
+        buttonsContainer.appendChild(buttonRow);
+
+        for (let i = 1; i <= count; i++) {
+          let button = document.createElement("button");
+          button.className = "number-button";
+          button.innerHTML = i;
+          button.style.backgroundColor = "red";
+          button.onclick = function () {
+            this.style.backgroundColor =
+              this.style.backgroundColor === "red" ? "blue" : "red";
+          };
+          buttonRow.appendChild(button);
+
+          // 10個ごとに改行
+          if (i % 10 === 0) {
+            buttonRow = document.createElement("div");
+            buttonRow.className = "button-row";
+            buttonsContainer.appendChild(buttonRow);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
