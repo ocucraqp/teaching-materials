@@ -2,46 +2,8 @@
 <html>
   <head>
     <title>2個のサイコロの合計値の出た回数</title>
-    <style>
-      body {
-        touch-action: manipulation;
-      }
-
-      #buttons {
-        text-align: center;
-        margin-top: 20px;
-      }
-
-      .button-div {
-        display: inline-block;
-        margin: 0 10px;
-        text-align: center;
-      }
-
-      button {
-        display: block;
-        margin: 5px auto;
-        width: 40px; /* ボタンの幅を調整 */
-        height: 40px; /* ボタンの高さを調整 */
-        border-radius: 5px; /* ボタンの端に丸みを加える */
-        background-color: #f44336; /* ボタンの色を変更 */
-        font-size: 20px;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
-
-      .label {
-        font-size: 20px; /* ラベルのフォントサイズを大きく */
-        margin: 5px 0; /* ラベルのマージンを調整 */
-      }
-
-      #barChart {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    </style>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/dice-graph.css">
   </head>
   <body>
     <canvas id="barChart"></canvas>

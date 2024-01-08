@@ -2,57 +2,8 @@
 <html>
   <head>
     <title>カラーカード</title>
-    <style>
-      body {
-        touch-action: manipulation;
-      }
-
-      .input {
-        font-size: 24px;
-      }
-
-      .update-button {
-        width: 60px; /* ボタンの幅 */
-        height: 36px; /* ボタンの高さ */
-        font-size: 12px; /* フォントサイズ */
-        background-color: #000;
-        color: #fff; /* 文字色 */
-        border: none; /* 枠線なし */
-        border-radius: 4px; /* 丸み */
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24),
-          0px 0px 2px rgba(0, 0, 0, 0.12); /* 影 */
-        cursor: pointer; /* カーソル */
-      }
-
-      #inputContainer {
-        margin-bottom: 20px; /* 下の要素との隙間を作る */
-      }
-
-      .button-row {
-        margin-bottom: 10px;
-      }
-
-      .number-button {
-        width: 60px; /* ボタンの幅 */
-        height: 50px; /* ボタンの高さ */
-        margin-right: 5px;
-        margin-bottom: 5px; /* 下マージンを追加 */
-        font-size: 16px; /* フォントサイズ */
-        color: #fff; /* 文字色 */
-        border: none; /* 枠線なし */
-        border-radius: 4px; /* 丸み */
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24),
-          0px 0px 2px rgba(0, 0, 0, 0.12); /* 影 */
-        cursor: pointer; /* カーソル */
-      }
-
-      /* レスポンシブデザインのためのメディアクエリ */
-      @media (max-width: 800px) {
-        button {
-          width: 40px; /* 画面が狭い時はボタンの幅を小さく */
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/color-card.css">
   </head>
   <body>
     <div id="inputContainer">
