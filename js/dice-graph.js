@@ -11,45 +11,46 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     ],
   };
-
+  const options = {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true,
+        suggestedMin: 0,
+        suggestedMax: 10,
+        ticks: {
+          font: {
+            size: 20, // X軸のフォントサイズ
+          },
+        },
+      },
+      x: {
+        ticks: {
+          font: {
+            size: 20, // X軸のフォントサイズ
+          },
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        labels: {
+          font: {
+            size: 20, // 凡例のフォントサイズ
+          },
+        },
+      },
+    },
+    animation: {
+      duration: 200,
+    },
+  };
+  // グラフ生成
   const ctx = document.getElementById("barChart").getContext("2d");
   const barChart = new Chart(ctx, {
     type: "bar",
     data: data,
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-          suggestedMin: 0,
-          suggestedMax: 10,
-          ticks: {
-            font: {
-              size: 20, // X軸のフォントサイズ
-            },
-          },
-        },
-        x: {
-          ticks: {
-            font: {
-              size: 20, // X軸のフォントサイズ
-            },
-          },
-        },
-      },
-      plugins: {
-        legend: {
-          labels: {
-            font: {
-              size: 20, // 凡例のフォントサイズ
-            },
-          },
-        },
-      },
-      animation: {
-        duration: 200,
-      },
-    },
+    options: options,
   });
 
   // ボタンの生成
@@ -62,18 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
     labelSpan.className = "label";
     labelSpan.textContent = label;
 
-    let plusButton = document.createElement("button");
-    plusButton.textContent = "+";
-    plusButton.onclick = function () {
-      updateData(index, 1);
-    };
-
-    let minusButton = document.createElement("button");
-    minusButton.textContent = "-";
-    minusButton.style.backgroundColor = "blue";
-    minusButton.onclick = function () {
-      updateData(index, -1);
-    };
+    const plusButton = createButton("+", () => updateData(index, 1), "red");
+    const minusButton = createButton("-", () => updateData(index, -1), "blue");
 
     buttonDiv.appendChild(labelSpan);
     buttonDiv.appendChild(plusButton);
@@ -81,12 +72,18 @@ document.addEventListener("DOMContentLoaded", function () {
     buttonsContainer.appendChild(buttonDiv);
   });
 
+  function createButton(text, onClick, bgColor = "") {
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.style.backgroundColor = bgColor;
+    button.addEventListener("click", onClick);
+    return button;
+  } 
+
   // データ更新関数
   function updateData(index, change) {
-    data.datasets[0].data[index] += change;
-    if (data.datasets[0].data[index] < 0) {
-      data.datasets[0].data[index] = 0; // データ値が負の数にならないように制限
-    }
+    const newValue = data.datasets[0].data[index] + change;
+    data.datasets[0].data[index] = newValue < 0 ? 0 : newValue;
     barChart.update();
   }
 });

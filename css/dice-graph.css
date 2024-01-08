@@ -1,16 +1,22 @@
+#barChart {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.label {
+  font-size: 20px; /* ラベルのフォントサイズを大きく */
+  margin: 5px 0; /* ラベルのマージンを調整 */
+}
+
 #buttons {
   text-align: center;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
-
 .button-div {
   display: inline-block;
   margin: 0 10px;
-  text-align: center;
-}
-
-#buttons {
-  margin-bottom: 100px;
 }
 button {
   display: block;
@@ -23,15 +29,5 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-}
-
-.label {
-  font-size: 20px; /* ラベルのフォントサイズを大きく */
-  margin: 5px 0; /* ラベルのマージンを調整 */
-}
-
-#barChart {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
