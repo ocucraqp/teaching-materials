@@ -1,15 +1,76 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>教材リンク</title>
+    <title>教材リンク集</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif; /* フォントファミリーを指定 */
+        background-color: #f4f4f4; /* 背景色 */
+        color: #333; /* テキストカラー */
+      }
+
+
+      h1 {
+        text-align: center; /* タイトルを中央揃え */
+        color: #444; /* タイトルのカラー */
+      }
+
+
+      a {
+        color: #337ab7; /* リンクのカラー */
+        text-decoration: none; /* 下線を消す */
+      }
+      a:hover {
+        text-decoration: underline; /* ホバー時に下線を表示 */
+      }
+      
+      table {
+        width: 80%; /* テーブルの幅 */
+        margin: 20px auto; /* 中央に配置 */
+        border-collapse: collapse;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 影を追加 */
+      }
+      th {
+        background-color: #f8f8f8; /* ヘッダーの背景色 */
+      }
+      th,
+      td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #ddd; /* 罫線 */
+      }
+
+      .thumbnail {
+        width: 200px; /* サムネイルの幅 */
+        height: auto; /* サムネイルの高さは自動調整 */
+        border: 1px solid #ddd; /* 画像に枠線を追加 */
+        border-radius: 5px; /* 丸みを追加 */
+      }
+    </style>
   </head>
   <body>
     <h1>教材リンク集</h1>
-    <nav>
-      <ul>
-        <li><a href="color-card.html">カラーカード</a></li>
-        <li><a href="dice-graph.html">2個のサイコロの合計値の出た回数</a></li>
-      </ul>
-    </nav>
+    <table>
+      <tr>
+        <th>リンク</th>
+          <th>サムネイル</th>
+      </tr>
+      <tr>
+        <td><a href="color-card.html">カラーカード</a></td>
+          <td><img
+            src="img/color-card-tmb.png"
+            alt="カラーカード"
+            class="thumbnail"
+          /></td>
+      </tr>
+      <tr>
+        <td><a href="dice-graph.html">2個のサイコロの合計値の出た回数</a></td>
+        <td><img
+            src="img/dice-graph-tmb.png"
+            alt="2個のサイコロの合計値の出た回数"
+            class="thumbnail"
+          /></td>
+      </tr>
+    </table>
   </body>
 </html>
