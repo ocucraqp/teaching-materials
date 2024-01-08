@@ -1,7 +1,9 @@
+#inputContainer {
+  margin-bottom: 20px; /* 下の要素との隙間を作る */
+}
 .input {
   font-size: 24px;
 }
-
 .update-button {
   width: 60px; /* ボタンの幅 */
   height: 36px; /* ボタンの高さ */
@@ -15,14 +17,9 @@
   cursor: pointer; /* カーソル */
 }
 
-#inputContainer {
-  margin-bottom: 20px; /* 下の要素との隙間を作る */
+#buttons {
+  margin-bottom: 100px;
 }
-
-.button-row {
-  margin-bottom: 10px;
-}
-
 .number-button {
   width: 60px; /* ボタンの幅 */
   height: 50px; /* ボタンの高さ */
@@ -35,4 +32,7 @@
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.24),
     0px 0px 2px rgba(0, 0, 0, 0.12); /* 影 */
   cursor: pointer; /* カーソル */
+}
+.button-row {
+  margin-bottom: 10px;
 }

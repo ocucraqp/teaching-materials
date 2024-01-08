@@ -9,6 +9,9 @@
   text-align: center;
 }
 
+#buttons {
+  margin-bottom: 100px;
+}
 button {
   display: block;
   margin: 5px auto;
